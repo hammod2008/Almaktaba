@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rohain</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="loggedOut-div">
+      <h3>لست مسجلا بأي حساب</h3>
+      <a href="Login.html" id="loginLink">تسجيل الدخول</a>
+      <a href="Signup.html" id="signupLink">تسجيل جديد</a>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <a class="active" href="index.html"
+        >الصفحة الرئيسية
+        <img id="activeimg" class="listImg" src="/icons/homeActive.svg" />
+      </a>
+      <a id="one" href="library.html">
+        المكتبة
+        <img class="listImg" src="/icons/librrary.svg" />
+      </a>
+      <a id="two" href="discussion.html">
+        ساحة النقاش
+        <img class="listImg" src="/icons/discusstion.svg" />
+      </a>
+      <div id="tab">
+        <div id="invite">إرسال دعوة</div>
+        <div id="logout">
+          <img id="logoutIcon" src="/icons/logout.svg" alt="log Out Icon" />
+          تسجيل خروج
+        </div>
+      </div>
+      <a id="settings" href="#الإعدادات">
+        الإعدادات
+        <img class="listImg" id="more" src="/icons/more.svg" />
+      </a>
+    </div>
+
+    <div class="content">
+      <div id="loggedin-div">Welcome</div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
