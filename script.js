@@ -42,6 +42,7 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
 
   if (firebaseUser) {
     isUser = true;
+    console.log(firebaseUser)
     hover();
   } else {
     isUser = false;
