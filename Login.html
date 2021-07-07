@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>تسجيل الدخول</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="LogInContainer">
+      <div class="mail-div">
+        <h3 style="font-family: almarai, sans-serif">تسجيل الدخول</h3>
+        <input id="txtemail" type="email" placeholder="البريد الإلكتروني..." />
+        <p id="errorMail">البريد الإلكتروني غير صحيح</p>
+        <input id="txtpassword" type="password" placeholder="كلمة المرور..." />
+        <p id="errorPass">كلمة المرور غير صحيحة</p>
+      </div>
+      <div id="firebaseui-auth-container"></div>
+      <button id="btnlogin">تسجيل الدخول</button>
+      <button id="byPhoneButton">الدخول عبر رمز التحقق</button>
+      <button id="byEmailButton">الدخول عبر البريد الإلكتروني</button>
+
+      <a href="Signup.html" class="link">لا تملك حساباً؟ تسجيل جديد</a>
+    </div>
+    <div id="MessageDiv">
+      <h2 style="padding-bottom: 20px">تم تسجيل الدخول بنجاح</h2>
+      <a href="index.html" class="link"> العودة للصفحة الرئيسية -> </a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
