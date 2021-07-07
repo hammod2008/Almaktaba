@@ -42,17 +42,18 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
 
   if (firebaseUser) {
     isUser = true;
-    hover("add");
+    hover();
   } else {
     isUser = false;
     loggedInDiv.style.display = "none";
     loggedOutDiv.style.display = "block";
-    hover("remove");
+    settings.style.cursor = "not-allowed"
+
   }
 });
 
-function hover(method) {
-  if (method == "add") {
+function hover() {
+
     logout.addEventListener("click", () => {
       firebase.auth().signOut();
       logout.style.display = "none";
@@ -70,8 +71,5 @@ function hover(method) {
     settings.addEventListener("mouseleave", () => {
       tab.style.display = "none";
     });
-  } else if (method == "remove") {
-    settings.removeEventListener("mouseenter");
-    tab.removeEventListener("mouseenter");
-  }
+  
 }
