@@ -20,18 +20,49 @@
   <body>
     <div id="LogInContainer">
       <div class="mail-div">
-        <h3 style="font-family: almarai, sans-serif">تسجيل الدخول</h3>
+        <h3 id="mailTitle" style="font-family: almarai, sans-serif">
+          تسجيل الدخول
+        </h3>
         <input id="txtemail" type="email" placeholder="البريد الإلكتروني..." />
         <p id="errorMail">البريد الإلكتروني غير صحيح</p>
         <input id="txtpassword" type="password" placeholder="كلمة المرور..." />
         <p id="errorPass">كلمة المرور غير صحيحة</p>
+
+        <div class="phone-div">
+          <h3
+            id="phonetitle"
+            style="display: none; font-family: almarai, sans-serif"
+          >
+            أدخل رقم جوال
+          </h3>
+          <form>
+            <input id="txtphone" type="tel" placeholder="+966 *** *** ***" />
+            <div id="recaptcha-container"></div>
+            <button id="btnSend" type="button" onclick="phoneAuth();">
+              إرسال الرمز
+            </button>
+          </form>
+        </div>
+        <div id="code-div">
+          <h3 style="font-family: almarai, sans-serif">أدخل رمز التحقق</h3>
+          <form>
+            <input id="txtcode" type="text" placeholder="أدخل الرمز" />
+            <button id="btnCode" type="button" onclick="codeVerify();">
+              إرسال
+            </button>
+          </form>
+        </div>
       </div>
-      <div id="firebaseui-auth-container"></div>
+
+      <div id="recaptcha-container"></div>
       <button id="btnlogin">تسجيل الدخول</button>
       <button id="byPhoneButton">الدخول عبر رمز التحقق</button>
       <button id="byEmailButton">الدخول عبر البريد الإلكتروني</button>
 
-      <a href="Signup.html" class="link">لا تملك حساباً؟ تسجيل جديد</a>
+      <p id="resetbtn">نسيت كلمة المرور</p>
+      <a href="Signup.html" id="signupLink" class="link"
+        >لا تملك حساباً؟ تسجيل جديد</a
+      >
     </div>
     <div id="MessageDiv">
       <h2 style="padding-bottom: 20px">تم تسجيل الدخول بنجاح</h2>
