@@ -19,6 +19,29 @@ body {
   margin-bottom: 10px;
   transition: 0.25s;
 }
+
+#btnSend,
+#btnCode {
+  color: white;
+  background-color: #3291c1;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
+  font-family: "Almarai", sans-serif;
+  margin-bottom: 10px;
+  display: none;
+  transition: 0.25s;
+}
+
+#btnCode {
+  display: block;
+}
+
 #byPhoneButton {
   color: #3291c1;
   background-color: #fafafa;
@@ -80,7 +103,6 @@ body {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -109,8 +131,11 @@ body {
   font-size: 16px;
   background: none;
 }
+
 #LogInContainer input[type="email"],
-#LogInContainer input[type="password"] {
+#LogInContainer input[type="password"],
+#txtphone,
+#txtcode {
   position: relative;
   border: none;
   border-bottom: 2px solid #adadad;
@@ -124,7 +149,9 @@ body {
   transition: 0.25s;
 }
 #LogInContainer input[type="email"]:focus,
-#LogInContainer input[type="password"]:focus {
+#LogInContainer input[type="password"]:focus,
+#txtphone:focus,
+#txtcode:focus {
   position: relative;
   border: none;
   border-bottom: 3px solid #236e94;
@@ -135,6 +162,14 @@ body {
   outline: none;
   font-size: 16px;
   background: none;
+}
+
+#txtphone {
+  display: none;
+}
+
+#code-div {
+  display: none;
 }
 
 .link {
@@ -175,4 +210,21 @@ body {
   display: none;
   margin-bottom: 50px;
   position: relative;
+}
+
+#resetbtn {
+  color: #236e94;
+  padding: 5px;
+  margin-top: 25px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #fafafa;
+  outline: none;
+  border: none;
+}
+
+#recaptcha-container {
+  margin-bottom: 20px;
+  margin-left: 15%;
+  display: none;
 }
