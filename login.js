@@ -13,17 +13,27 @@ firebase.initializeApp(firebaseConfig);
 let isUser;
 const txtEmail = document.getElementById("txtemail");
 const txtPassword = document.getElementById("txtpassword");
+const txtPhone = document.getElementById("txtphone");
+const codeDiv = document.querySelector("#code-div");
 
-const btnLogin = document.getElementById("btnlogin");
 const byPhoneButton = document.getElementById("byPhoneButton");
 const byEmailButton = document.getElementById("byEmailButton");
+const btnLogin = document.getElementById("btnlogin");
+const btnSend = document.querySelector("#btnSend");
 const btnSignUp = document.getElementById("btnsignup");
 const btnLogout = document.getElementById("btnlogout");
 
 const errorMail = document.getElementById("errorMail");
 const errorPass = document.getElementById("errorPass");
 
-const phoneCo = document.getElementById("firebaseui-auth-container");
+const phoneCo = document.getElementById("recaptcha-container");
+const phonetitle = document.getElementById("phonetitle");
+const phoneDiv = document.querySelector(".phone-div");
+const mailTitle = document.getElementById("mailTitle");
+
+const resetbtn = document.getElementById("resetbtn");
+const link = document.querySelector("#signupLink");
+const recaptchaContainer = document.querySelector("#recaptcha-container");
 let error;
 
 // show message to the form
@@ -70,9 +80,7 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
   }
 });
 
-/**/
-
-// FirebaseUI config.
+/* FirebaseUI config.
 var uiConfig = {
   signInSuccessUrl: "index.html",
   signInOptions: [
@@ -93,20 +101,94 @@ var uiConfig = {
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
+*/
 
 byPhoneButton.addEventListener("click", () => {
   phoneCo.style.display = "block";
+  phoneDiv.style.display = "block";
   byEmailButton.style.display = "block";
+  phonetitle.style.display = "block";
+  txtPhone.style.display = "inline";
   txtEmail.style.display = "none";
   txtPassword.style.display = "none";
   btnLogin.style.display = "none";
+  btnSend.style.display = "block";
   byPhoneButton.style.display = "none";
+  mailTitle.style.display = "none";
+  resetbtn.style.display = "none";
+  link.style.display = "none";
+  recaptchaContainer.style.display = "block";
 });
 byEmailButton.addEventListener("click", () => {
   phoneCo.style.display = "none";
+  phoneDiv.style.display = "none";
   byEmailButton.style.display = "none";
-  txtEmail.style.display = "block";
-  txtPassword.style.display = "block";
+  phonetitle.style.display = "none";
+  txtEmail.style.display = "inline";
+  txtPassword.style.display = "inline";
   btnLogin.style.display = "block";
   byPhoneButton.style.display = "block";
+  mailTitle.style.display = "block";
+  txtPhone.style.display = "none";
+  codeDiv.style.display = "none";
 });
+
+resetbtn.addEventListener("click", () => {
+  txtPassword.style.display = "none";
+  if (txtEmail.value == "") {
+    errorMail.style.display = "inline";
+    errorMail.innerText = "يرجى إدخال البريد الإلكتروني";
+    return;
+  }
+  txtEmail.style.display = "none";
+  btnLogin.style.display = "none";
+  resetbtn.style.display = "none";
+  byPhoneButton.style.display = "none";
+  link.style.display = "none";
+});
+
+window.onload = function () {
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+    "recaptcha-container"
+  );
+  recaptchaVerifier.render();
+};
+
+function phoneAuth() {
+  codeDiv.style.display = "block";
+  phoneDiv.style.display = "none";
+  link.style.display = "none";
+  byEmailButton.style.display = "none";
+  //get num
+  const number = txtPhone.value;
+  const appVerifier = window.recaptchaVerifier;
+
+  firebase
+    .auth()
+    .signInWithPhoneNumber(number, appVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+
+      coderesult = confirmationResult;
+
+      console.log(coderesult);
+      alert("message sent");
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+function codeVerify() {
+  const code = document.getElementById("txtcode").value;
+  coderesult
+    .confirm(code)
+    .then((result) => {
+      alert("success");
+      const user = result.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
