@@ -161,11 +161,6 @@ function codeVerify() {
   const code = document.getElementById("txtcode").value;
   coderesult
     .confirm(code)
-    .then((result) => {
-      alert("success");
-      const user = result.user;
-      console.log(user);
-    })
     .catch((error) => {
       alert(error.message);
     });
