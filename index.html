@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rohain</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <a class="active" href="index.html"
+        >home
+        <img id="activeimg" class="listImg" src="./icons/homeActive.svg" />
+      </a>
+      <a id="one" href="library.html">
+        library
+        <img class="listImg" src="./icons/librrary.svg" />
+      </a>
+      <a id="two" href="discussion.html">
+        discusstion
+        <img class="listImg" src="./icons/discusstion.svg" />
+      </a>
+      <div id="tab">
+        <div id="invite">إرسال دعوة</div>
+        <div id="logout">
+          <img id="logoutIcon" src="./icons/logout.svg" alt="log Out Icon" />
+          تسجيل خروج
+        </div>
+      </div>
+      <a id="settings">
+        <img class="listImg" id="settingsIcon" src="./icons/settings.svg" />
+        settings
+      </a>
+    </div>
+
+    <div class="modalContainer">
+      <div id="modal">
+        <h2>الإعدادات</h2>
+        <form>
+          <div id="txtinputCo">
+            <input value="الاسم" />
+            <p>:الاسم</p>
+          </div>
+          <div id="imginputCo">
+            <p style="text-align: right">:الصورة الشخصية</p>
+            <div id="changeImageButton">تغيير الصورة الشخصية</div>
+          </div>
+        </form>
+        <div id="logout" onclick="logoutfunc()">
+          <img id="logoutIcon" src="./icons/logout.svg" alt="log Out Icon" />
+          تسجيل خروج
+        </div>
+        <div class="buttonsCo">
+          <button class="btnSecondery" id="closebtn">إلغاء</button>
+          <button class="btnPrimary" id="savebtn">حفظ</button>
+        </div>
+      </div>
+      <div class="imgModal">
+        <h2>تغيير الصورة الشخصية</h2>
+
+        <div class="wrapper">
+          <div class="image">
+            <img src="" style="display: none" />
+          </div>
+          <div class="modalContent">
+            <div class="uploudIcon">
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <div class="uploudText">لم يتم تغيير الصورة</div>
+          </div>
+        </div>
+        <input id="default-btn" type="file" accept="image/*" hidden />
+
+        <button onclick="defaultBtnActive()" id="custom-btn">اختر ملفاً</button>
+
+        <div class="buttonsCo">
+          <button class="btnSecondery" id="closeimgbtn">إلغاء</button>
+          <button class="btnPrimary" id="saveimgbtn">حفظ</button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div id="loggedin-div"></div>
+      <!--
+
+        <div class="alert show">
+          <span class="close-btn">
+            <span class="fas fa-times"></span>
+          </span>
+          <span class="msg">Lorem ipsum dolor.</span>
+          <span class="fas fa-exclamation-circle"></span>
+        </div>
+        <div class="succes show">
+          <span class="close-btn">
+            <span class="fas fa-times"></span>
+          </span>
+          <span class="msg">Lorem ipsum dolor.</span>
+          <span class="fas fa-check-circle"></span>
+        </div>
+      -->
+      <div id="loggedOut-div">
+        <h3>لست مسجلا بأي حساب</h3>
+        <a href="Login.html" id="loginLink">تسجيل الدخول</a>
+        <a href="Signup.html" id="signupLink">تسجيل جديد</a>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
