@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rohain</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <link rel="stylesheet" href="Signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="Signup.css" />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="SignUpContainer">
+      <div class="mail-div">
+        <h3>تسجيل جديد</h3>
+        <input id="txtname" type="text" placeholder="الاسم الكامل" />
+        <p id="errorName">يرجى إدخال الاسم</p>
+        <input id="txtemail" type="email" placeholder="البريد الإلكتروني" />
+        <p id="errorMail">البريد الإلكتروني غير صالح</p>
+        <input id="txtPhone" type="tel" placeholder="رقم الجوال" />
+        <p id="errorPhone">رقم الجوال غير صالح</p>
+        <input id="txtpassword" type="password" placeholder="كلمة المرور" />
+        <p id="errorPass">كلمة المرور ضعيفة، استخدم 6 خانات</p>
+      </div>
+
+      <button class="btnsignup" id="btnsignup">تسجيل جديد</button>
+
+      <a href="Login.html" class="link">اضغط هنا لتسجيل الدخول</a>
+    </div>
+    <div id="MessageDiv">
+      <h2 style="padding-bottom: 20px">تم التسجيل بنجاح</h2>
+      <a href="index.html" class="link"> العودة للصفحة الرئيسية -> </a>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="signup.js"></script>
+  </body>
+</html>

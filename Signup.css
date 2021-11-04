@@ -1,0 +1,150 @@
+body {
+  background-color: #ededed;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btnsignup {
+  color: white;
+  background-color: #236e94;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
+  margin-bottom: 10px;
+  transition: 0.25s;
+  margin-top: 50px;
+}
+.btnsignup:hover {
+  color: white;
+  background-color: #1e5774;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#SignUpContainer {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  padding: 25px;
+  width: 429.587px;
+}
+
+#SignUpContainer h3 {
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+  width: 100%;
+}
+
+#SignUpContainer input {
+  position: relative;
+  border: none;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  outline: none;
+  font-size: 16px;
+  background: none;
+  text-align: right;
+}
+#SignUpContainer input[type="email"],
+#SignUpContainer input[type="password"],
+#SignUpContainer input[type="text"],
+#SignUpContainer input[type="tel"] {
+  position: relative;
+  border: none;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  outline: none;
+  font-size: 16px;
+  background: none;
+  transition: 0.25s;
+}
+#SignUpContainer input[type="email"]:focus,
+#SignUpContainer input[type="password"]:focus,
+#SignUpContainer input[type="text"]:focus,
+#SignUpContainer input[type="tel"]:focus {
+  border: none;
+  border-bottom: 3px solid #236e94;
+  margin: 30px 0;
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  outline: none;
+  font-size: 16px;
+  background: none;
+}
+
+.link {
+  color: #838383;
+  padding-top: 25px;
+  transition: 0.25s;
+}
+.link:hover {
+  color: #236e94;
+  padding-top: 25px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#MessageDiv {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  padding: 25px;
+  width: fit-content;
+  display: none;
+}
+
+#errorMail {
+  color: red;
+  margin-bottom: 30px;
+  display: none;
+}
+#errorPass {
+  color: red;
+  display: none;
+  margin-bottom: 50px;
+  position: relative;
+}
+#errorName {
+  color: red;
+  display: none;
+  margin-bottom: 50px;
+  position: relative;
+}
+#errorPhone {
+  color: red;
+  display: none;
+  margin-bottom: 50px;
+  position: relative;
+}
